@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Run JavaScript with ES6 Modules in HTML</title>
+</head>
+<body>
+
+<!-- Include the JavaScript code -->
+<script type="module">
+    // JavaScript code with ES6 modules
+    
+    // Import the Fountain class from fountain-js module
+    import { Fountain } from 'fountain-js';
+
+    // Create a new instance of Fountain
+    let fountain = new Fountain();
+
+    // Import the assert module (if it's available in the browser)
+    import * as assert from 'assert';
+
+    // Define the text to parse
+    const text = `.OPENING TITLES
+    > BRICK & STEEL <
+    > FULL RETIRED <
+    SMASH CUT TO:`;
+
+    // Parse the text using the Fountain object
+    let output = fountain.parse(text);
+    let actual = output.html.script;
+
+    // Define the expected output
+    const expected = '<h3>OPENING TITLES</h3><p class="centered">BRICK & STEEL <br /> FULL RETIRED</p><h2>SMASH CUT TO:</h2>';
+
+    // Perform assertion
+    assert.strictEqual(actual, expected);
+
+    // Output the result to the console
+    console.log("Actual:", actual);
+    console.log("Expected:", expected);
+</script>
+
+</body>
+</html>
