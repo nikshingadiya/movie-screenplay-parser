@@ -22,6 +22,7 @@ async function parseScript(filePath) {
     const fountainData = {
         script: output.html.script,
         tokens: fountain.tokens
+
     };
     
     const jsonOutput = JSON.stringify(fountainData, null, 2);
