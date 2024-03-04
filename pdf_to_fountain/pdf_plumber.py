@@ -26,12 +26,13 @@ def extract_text_from_pdf(pdf_path,char_height = 12):
     return output_text
 
 # Usage example:
-pdf_path = "../data/iron-man-2008.pdf"
+pdf_path = "./data/iron-man-2008.pdf"
 output_text = extract_text_from_pdf(pdf_path,char_height = 12)
 
 def write_text_to_file(output_text, file_path):
     with open(file_path, "w") as file:
         file.write(output_text)
-output_file=pdf_path.split("/")[0][-1].split(".")
+output_file=pdf_path.split("/")[-1].split(".")[0]
+output_file=output_file+".fountain"
 write_text_to_file(output_text, output_file)
 
