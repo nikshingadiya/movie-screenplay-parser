@@ -22,11 +22,11 @@ def extract_text_from_pdf(pdf_path,char_height = 12):
                     output_text += "\n\n\n" + slicer(line['text'], ['INT', 'EXT'])
                 else:
                     output_text += "\n" + line["text"]  # Add a space between each line
-
+            output_text +="\n\n\n\n"+f'page_number={page_number+1}'+"\n"
     return output_text
 
 # Usage example:
-pdf_path = "./data/iron-man-2008.pdf"
+pdf_path = "./data/Imitation+Game.pdf"
 output_text = extract_text_from_pdf(pdf_path,char_height = 12)
 
 def write_text_to_file(output_text, file_path):

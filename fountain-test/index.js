@@ -37,5 +37,5 @@ async function parseScript(filePath) {
     });
 }
 
-const filePath = 'ironman.fountain'; // Update with your script file path
+const filePath = 'pacific-rim-2013_1.fountain'; // Update with your script file path
 parseScript(filePath);
