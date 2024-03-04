@@ -37,5 +37,5 @@ async function parseScript(filePath) {
     });
 }
 
-const filePath = 'brick.fountain'; // Update with your script file path
+const filePath = 'ironman.fountain'; // Update with your script file path
 parseScript(filePath);
