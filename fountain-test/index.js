@@ -22,11 +22,12 @@ async function parseScript(filePath) {
     const fountainData = {
         script: output.html.script,
         tokens: fountain.tokens
-
     };
-    
+
+    const folder_path = "./jsonfile";
+
     const jsonOutput = JSON.stringify(fountainData, null, 2);
-    const jsonFilePath = filePath.replace('.fountain', '.json');
+    const jsonFilePath = folder_path + filePath.replace("./fountain_file", "").replace('.fountain', '.json');
 
     fs.writeFile(jsonFilePath, jsonOutput, 'utf8', (err) => {
         if (err) {
@@ -37,5 +38,12 @@ async function parseScript(filePath) {
     });
 }
 
-const filePath = 'pacific-rim-2013_1.fountain'; // Update with your script file path
+// Parsing command line arguments
+const args = process.argv.slice(2);
+if (args.length !== 1) {
+    console.error("Usage: node script_name.js <script_file_path>");
+    process.exit(1);
+}
+
+const filePath = args[0];
 parseScript(filePath);

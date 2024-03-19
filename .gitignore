@@ -6,3 +6,5 @@ venv
 *.fountain
 *.__pycache__
 
+
+*.pyc
