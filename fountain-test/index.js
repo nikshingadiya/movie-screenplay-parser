@@ -26,7 +26,7 @@ async function parseScript(filePath) {
 
     const folder_path = "./jsonfile";
 
-    const jsonOutput = JSON.stringify(fountainData, null, 2);
+    const jsonOutput = JSON.stringify(fountaainData, null, 2);
     const jsonFilePath = folder_path + filePath.replace("./fountain_file", "").replace('.fountain', '.json');
 
     fs.writeFile(jsonFilePath, jsonOutput, 'utf8', (err) => {
